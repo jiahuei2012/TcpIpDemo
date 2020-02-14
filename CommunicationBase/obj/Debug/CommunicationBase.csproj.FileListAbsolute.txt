@@ -1,0 +1,6 @@
+D:\Jiahuei\TcpIpDemo\CommunicationBase\bin\Debug\CommunicationBase.dll
+D:\Jiahuei\TcpIpDemo\CommunicationBase\bin\Debug\CommunicationBase.pdb
+D:\Jiahuei\TcpIpDemo\CommunicationBase\obj\Debug\CommunicationBase.csprojAssemblyReference.cache
+D:\Jiahuei\TcpIpDemo\CommunicationBase\obj\Debug\CommunicationBase.csproj.CoreCompileInputs.cache
+D:\Jiahuei\TcpIpDemo\CommunicationBase\obj\Debug\CommunicationBase.dll
+D:\Jiahuei\TcpIpDemo\CommunicationBase\obj\Debug\CommunicationBase.pdb

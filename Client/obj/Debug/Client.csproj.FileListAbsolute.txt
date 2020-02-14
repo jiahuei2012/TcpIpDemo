@@ -1,0 +1,12 @@
+D:\Jiahuei\TcpIpDemo\Client\bin\Debug\Client.exe.config
+D:\Jiahuei\TcpIpDemo\Client\bin\Debug\Client.exe
+D:\Jiahuei\TcpIpDemo\Client\bin\Debug\Client.pdb
+D:\Jiahuei\TcpIpDemo\Client\bin\Debug\CommunicationBase.dll
+D:\Jiahuei\TcpIpDemo\Client\bin\Debug\CommunicationBase.pdb
+D:\Jiahuei\TcpIpDemo\Client\obj\Debug\TcpIpDemo.Form1.resources
+D:\Jiahuei\TcpIpDemo\Client\obj\Debug\Client.Properties.Resources.resources
+D:\Jiahuei\TcpIpDemo\Client\obj\Debug\Client.csproj.GenerateResource.cache
+D:\Jiahuei\TcpIpDemo\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+D:\Jiahuei\TcpIpDemo\Client\obj\Debug\Client.csproj.CopyComplete
+D:\Jiahuei\TcpIpDemo\Client\obj\Debug\Client.exe
+D:\Jiahuei\TcpIpDemo\Client\obj\Debug\Client.pdb

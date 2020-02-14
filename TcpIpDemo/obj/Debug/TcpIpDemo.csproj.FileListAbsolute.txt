@@ -1,0 +1,10 @@
+D:\Jiahuei\TcpIpDemo\TcpIpDemo\bin\Debug\TcpIpDemo.exe.config
+D:\Jiahuei\TcpIpDemo\TcpIpDemo\bin\Debug\TcpIpDemo.exe
+D:\Jiahuei\TcpIpDemo\TcpIpDemo\bin\Debug\TcpIpDemo.pdb
+D:\Jiahuei\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.csprojAssemblyReference.cache
+D:\Jiahuei\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.Form1.resources
+D:\Jiahuei\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.Properties.Resources.resources
+D:\Jiahuei\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.csproj.GenerateResource.cache
+D:\Jiahuei\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.csproj.CoreCompileInputs.cache
+D:\Jiahuei\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.exe
+D:\Jiahuei\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.pdb
