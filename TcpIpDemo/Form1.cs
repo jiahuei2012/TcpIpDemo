@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace TcpIpDemo
 {
     public partial class Form1 : Form
     {
+        private TcpListener listener;
+        private TcpClient tcpClient;
+        private Thread ClThread;
+        private Hashtable HT = new Hashtable();
+        private List<Monster> monsters = new List<Monster>();
         public Form1()
         {
             InitializeComponent();
@@ -22,21 +28,25 @@ namespace TcpIpDemo
 
         public void ConnectionListener()
         {
-            TcpListener listener = null;
             try
             {
-                IPEndPoint ipe = new IPEndPoint(IPAddress.Parse("192.168.0.143"), 1111);
+                IPEndPoint ipe = new IPEndPoint(IPAddress.Parse("192.168.0.24"), 1111);
                 listener = new TcpListener(ipe);
                 listener.Start();
-                Monster monster = new Monster("怪物1", 1000, 200);
-                
                 while (true)
                 {
-                    TcpClient tcpClient = listener.AcceptTcpClient();
-
-                    HandlerClient handler = new HandlerClient(tcpClient);
-                    handler.Communicate(monster);
-                    MessageBox.Show(monster.HP.ToString());
+                    if (listener.Pending())
+                    {
+                        tcpClient = listener.AcceptTcpClient();
+                        if (!HT.Contains(tcpClient))
+                        {
+                            HT.Add(tcpClient, monsters[new Random().Next(4)]);
+                        }
+                        ClThread = new Thread(ListenClient);
+                        ClThread.IsBackground = true;
+                        ClThread.Start();
+                    }
+                    
                 }
             }
             catch (Exception e)
@@ -47,55 +57,62 @@ namespace TcpIpDemo
             {
                 listener.Stop();
             }
+        }
 
-            /*
-
-            //IPAddress[] ipa = Dns.GetHostAddresses(Dns.GetHostName());
-            IPEndPoint ipe = new IPEndPoint(IPAddress.Parse("192.168.0.143"), 1111);
-            TcpListener listener = new TcpListener(ipe);
-
-            listener.Start();
-            //MessageBox.Show("等待連線...");
-
-            TcpClient tcpClient;
-            int clients = 0;
-            bool Isgameover = false;
-            tcpClient = listener.AcceptTcpClient();
+        private void ListenClient()
+        {
+            TcpClient client = tcpClient;
+            Thread thread = ClThread;
             while (true)
             {
                 try
                 {
-  
-                    if (tcpClient.Connected)
+                    CommunicationBase cb = new CommunicationBase();
+                    string data = cb.ReceiveData(client);
+                    string cmd = data.Substring(0, 1);
+                    int attHp = 0;
+                    Monster monster = (Monster)HT[client];
+                    switch (cmd)
                     {
-                        MessageBox.Show("連線成功");
-                        Monster monster = new Monster("怪物1", 1000, 200);
-                        HandlerClient handler = new HandlerClient(tcpClient);
-
-                        handler.Communicate(monster);
-                        
-                        Thread thread = new Thread(() => handler.Communicate(monster));
-                        clients++;
-                        thread.IsBackground = true;
-                        thread.Start();
-                        thread.Join();
-                        
-                        MessageBox.Show(monster.HP.ToString());
+                        case "1":
+                            attHp = int.Parse(data.Substring(1));
+                            monster.BeAttacked(attHp);
+                            break;
+                        case "9":
+                            HT.Remove(client);
+                            thread.Abort();
+                            break;
                     }
+                    //MessageBox.Show(monster.HP.ToString());
+                    string msg = monster.HP.ToString() + "," + new Random().Next(50).ToString();
+                    cb.SendData(msg, client);
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
+                    throw;
                 }
             }
-            */
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Thread thread = new Thread(ConnectionListener);
-            //thread.Start();
-            ConnectionListener();
+            Thread mainThread = new Thread(ConnectionListener);
+            mainThread.IsBackground = true;
+            mainThread.Start();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.ExitThread();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            monsters.Add(new Monster("怪物1", 1000, 200));
+            monsters.Add(new Monster("怪物2", 1500, 200));
+            monsters.Add(new Monster("怪物3", 2500, 200));
+            monsters.Add(new Monster("怪物4", 3500, 200));
         }
     }
 }

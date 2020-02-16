@@ -10,3 +10,16 @@ D:\Jiahuei\TcpIpDemo\TcpIpDemo\obj\Debug\Server.csproj.CopyComplete
 D:\Jiahuei\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.exe
 D:\Jiahuei\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.pdb
 D:\Jiahuei\TcpIpDemo\TcpIpDemo\bin\Debug\TcpIpDemo.pdb
+F:\C#\TcpIpDemo\TcpIpDemo\bin\Debug\TcpIpDemo.exe.config
+F:\C#\TcpIpDemo\TcpIpDemo\bin\Debug\TcpIpDemo.exe
+F:\C#\TcpIpDemo\TcpIpDemo\bin\Debug\TcpIpDemo.pdb
+F:\C#\TcpIpDemo\TcpIpDemo\bin\Debug\CommunicationBase.dll
+F:\C#\TcpIpDemo\TcpIpDemo\bin\Debug\CommunicationBase.pdb
+F:\C#\TcpIpDemo\TcpIpDemo\obj\Debug\Server.csprojAssemblyReference.cache
+F:\C#\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.Form1.resources
+F:\C#\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.Properties.Resources.resources
+F:\C#\TcpIpDemo\TcpIpDemo\obj\Debug\Server.csproj.GenerateResource.cache
+F:\C#\TcpIpDemo\TcpIpDemo\obj\Debug\Server.csproj.CoreCompileInputs.cache
+F:\C#\TcpIpDemo\TcpIpDemo\obj\Debug\Server.csproj.CopyComplete
+F:\C#\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.exe
+F:\C#\TcpIpDemo\TcpIpDemo\obj\Debug\TcpIpDemo.pdb
